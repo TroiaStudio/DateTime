@@ -1,0 +1,19 @@
+{
+    "name": "galek/device-detect",
+    "description": "Detecting device (phone, tablet, ...)",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Jan Galek",
+            "email": "admin@gcore.cz"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Galek\\Helper\\": "src/Galek/Helper"
+        }
+    },
+    "require-dev": {
+        "nette/tester": "^1.7"
+    }
+}
