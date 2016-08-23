@@ -38,6 +38,12 @@ Slovakia - sk
 Russia - ru
 ```
 
+ToDo
+-----
+1. User Format style
+2. Option for only bigest time (for example  0 year, 2 day, 3 minute,... return 2 day)
+
+
 Usage
 -----
 
