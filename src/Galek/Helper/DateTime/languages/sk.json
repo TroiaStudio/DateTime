@@ -1,0 +1,79 @@
+{
+    "before_rule": "before",
+    "one_rule": "",
+    "before": {
+        "verb": "pred",
+        "seconds": {
+            "one": "sekundou",
+            "two": "sekundami"
+        },
+        "minutes": {
+            "one": "minútou",
+            "two": "minútami"
+        },
+        "hours": {
+            "one": "hodinou",
+            "two": "hodinami"
+        },
+        "days": {
+            "one": "dňom",
+            "two": "dni"
+        },
+        "months": {
+            "one": "mesiacom",
+            "two": "mesiaci"
+        },
+        "years": {
+            "one": "rokom",
+            "two": "rokmi"
+        }
+    },
+    "after": {
+        "verb": "za",
+        "seconds": {
+            "one": "sekundu",
+            "two": "sekundy",
+            "five": "sekúnd"
+        },
+        "minutes": {
+            "one": "minútu",
+            "two": "minúty",
+            "five": "minút"
+        },
+        "hours": {
+            "one": "hodinu",
+            "two": "hodiny",
+            "five": "hodín"
+        },
+        "days": {
+            "one": "deň",
+            "two": "dni",
+            "five": "dní"
+        },
+        "months": {
+            "one": "mesiac",
+            "two": "mesiaca",
+            "five": "mesiacov"
+        },
+        "years": {
+            "one": "rok",
+            "two": "roky",
+            "five": "let"
+        }
+    },
+    "yesterday": "včera",
+    "tomorrow": "zajtra",
+    "now": "práve teraz",
+    "second": "sekunda",
+    "seconds": "sekundy",
+    "minute": "minúta",
+    "minutes": "minúty",
+    "hour": "hodina",
+    "hours": "hodiny",
+    "day": "deň",
+    "days": "dni",
+    "month": "mesiac",
+    "months": "mesiaca",
+    "year": "rok",
+    "years": "roky"
+}

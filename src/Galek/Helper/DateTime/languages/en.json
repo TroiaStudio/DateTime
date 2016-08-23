@@ -1,0 +1,79 @@
+{
+    "before_rule": "after",
+    "one_rule": "a",
+    "before": {
+        "verb": "ago",
+        "seconds": {
+            "one": "second",
+            "two": "seconds"
+        },
+        "minutes": {
+            "one": "minute",
+            "two": "minutes"
+        },
+        "hours": {
+            "one": "hour",
+            "two": "hours"
+        },
+        "days": {
+            "one": "day",
+            "two": "days"
+        },
+        "months": {
+            "one": "month",
+            "two": "months"
+        },
+        "years": {
+            "one": "year",
+            "two": "years"
+        }
+    },
+    "after": {
+        "verb": "after",
+        "seconds": {
+            "one": "second",
+            "two": "seconds",
+            "five": "seconds"
+        },
+        "minutes": {
+            "one": "minute",
+            "two": "minutes",
+            "five": "minutes"
+        },
+        "hours": {
+            "one": "hour",
+            "two": "hours",
+            "five": "hours"
+        },
+        "days": {
+            "one": "day",
+            "two": "days",
+            "five": "days"
+        },
+        "months": {
+            "one": "month",
+            "two": "months",
+            "five": "months"
+        },
+        "years": {
+            "one": "year",
+            "two": "years",
+            "five": "years"
+        }
+    },
+    "yesterday": "yesterday",
+    "tomorrow": "tomorrow",
+    "now": "just now",
+    "second": "second",
+    "seconds": "seconds",
+    "minute": "minute",
+    "minutes": "minutes",
+    "hour": "hour",
+    "hours": "hours",
+    "day": "day",
+    "days": "days",
+    "month": "month",
+    "months": "months",
+    "year": "year",
+    "years": "years"
+}
