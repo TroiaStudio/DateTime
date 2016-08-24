@@ -14,9 +14,7 @@
         }
     },
     "require-dev": {
-        "nette/tester": "^1.7"
-    },
-    "require": {
+        "nette/tester": "^1.7",
         "tracy/tracy": "^2.4"
     }
 }
