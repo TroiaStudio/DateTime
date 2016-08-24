@@ -10,7 +10,6 @@ php:
   - hhvm
 
 env:
-  - TESTER_PHP_BIN="php"
   - TESTER_PHP_BIN="php-cgi"
   - TESTER_PHP_BIN="hhvm"
 
