@@ -96,7 +96,7 @@ class DateTime extends \DateTime
 
     private function load($lang)
     {
-        $file = __DIR__.'\DateTime\languages\\'.$lang.'.json';
+        $file = __DIR__.'/DateTime/languages/'.$lang.'.json';
         return json_decode(file_get_contents($file));
     }
 
