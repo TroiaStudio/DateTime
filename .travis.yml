@@ -46,8 +46,7 @@ before_install:
 install:
   - composer install --no-interaction --prefer-source
 
-before_script:
-  - phpenv config add travis.ini
+before_script: phpenv config-add travis.ini
 
 script:
   - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/
