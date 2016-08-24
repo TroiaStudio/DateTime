@@ -9,6 +9,7 @@ php:
   - hhvm
 
 env:
+  - TESTER_PHP_BIN="php"
   - TESTER_PHP_BIN="php-cgi"
   - TESTER_PHP_BIN="hhvm"
 
@@ -36,6 +37,9 @@ matrix:
 
     - php: hhvm
       env: TESTER_PHP_BIN="php-cgi"
+  include:
+    - php: 5.5
+      env: dependencies="--prefer-lowest --prefer-stable" PHP_BIN=php
 
 services:
   - redis-server
@@ -46,10 +50,6 @@ before_install:
 install:
   - composer install --no-interaction --prefer-source
 
-before_script:
-  - phpenv config-add travis.ini
-  - if [ $TRAVIS_PHP_VERSION == "5.3.3" ]; then composer --global config disable-tls true; composer --global config secure-http false; fi
-
 script:
   - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/
 #  - ./vendor/bin/tester -p $TESTER_PHP_BIN -c ./tests/GalekTests/Socials/php.ini -s ./tests/
@@ -57,3 +57,15 @@ script:
 after_failure:
   # Vytiskne obsah souborů *.actual
   - for i in $(find ./tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
+
+before_script:
+  - if [ $TRAVIS_PHP_VERSION == "5.3.3" ]; then composer --global config disable-tls true; composer --global config secure-http false; fi
+  - travis_retry composer update --no-interaction --prefer-dist $dependencies
+  - travis_retry composer create-project nette/code-checker code-checker ~2.5 --no-interaction
+
+sudo: false
+
+
+cache:
+    directories:
+        - $HOME/.composer/cache
