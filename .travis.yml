@@ -6,6 +6,7 @@ php:
   - 5.5
   - 5.6
   - 7.0
+  - 7.1
   - hhvm
 
 env:
@@ -17,9 +18,9 @@ matrix:
   allow_failures:
     - php: hhvm
     - php: 5.3.3
+    - php: 7.1
 
   exclude:
-
     - php: 5.3.3
       env: TESTER_PHP_BIN="hhvm"
 
@@ -37,18 +38,7 @@ matrix:
 
     - php: hhvm
       env: TESTER_PHP_BIN="php-cgi"
-  include:
-    - php: 5.5
-      env: dependencies="--prefer-lowest --prefer-stable" PHP_BIN=php
 
-services:
-  - redis-server
-
-before_install:
-  - composer self-update
-
-install:
-  - composer install --no-interaction --prefer-source
 
 script:
   - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/

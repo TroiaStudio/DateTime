@@ -13,6 +13,9 @@
             "Galek\\Helper\\": "src/Galek/Helper"
         }
     },
+    "require": {
+        "php": ">=5.3.3"
+    },
     "require-dev": {
         "nette/tester": "^1.7",
         "tracy/tracy": "^2.4"
