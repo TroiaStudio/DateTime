@@ -32,7 +32,11 @@ class DateTime extends \DateTime
 
     public function __construct($time = 'now', $object = null)
     {
-        parent::__construct($time, $object);
+        if ($object === null) {
+            parent::__construct($time);
+        } else {
+            parent::__construct($time, $object);
+        }
         $this->setLanguage('en');
     }
 
