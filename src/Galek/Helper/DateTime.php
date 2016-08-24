@@ -116,7 +116,7 @@ class DateTime extends \DateTime
             $text_after = '';
         }
 
-        return ['time' => $time, 'before' => $text_before, 'after' => $text_after];
+        return array('time' => $time, 'before' => $text_before, 'after' => $text_after);
     }
 
     private function textSelector($time, $type = 'minutes', $pre = 'y', $number = 0, $change = false)
