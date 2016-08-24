@@ -46,7 +46,9 @@ before_install:
 install:
   - composer install --no-interaction --prefer-source
 
-before_script: phpenv config-add travis.ini
+before_script:
+  - phpenv config-add travis.ini
+  - if [ $TRAVIS_PHP_VERSION == "5.3.3" ]; then composer --global config disable-tls true; composer --global config secure-http false; fi
 
 script:
   - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/
