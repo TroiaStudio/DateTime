@@ -1,6 +1,13 @@
 <?php
 
-/*
+/**
+ * @package Galek\Helper
+ * @subpackage DateTime
+ *
+ * @copyright Copyright (C) 2016 Jan Galek
+ * @license GPL-3 https://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @description Extensions
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -60,7 +67,10 @@ class DateTime extends \DateTime
         }
         $diff = parent::diff($datetime2, $absolute);
 
-        $resultDiff = $this->testDiffrent(new \DateTime($this->format('Y-m-d H:i:s')), new \DateTime($datetime2->format('Y-m-d H:i:s')));
+        $date1 = new \DateTime($this->format('Y-m-d H:i:s'));
+        $date2 = new \DateTime($datetime2->format('Y-m-d H:i:s'));
+
+        $resultDiff = $this->testDiffrent($date1, $date2);
         $time = $resultDiff['time'];
         $text_before = $resultDiff['before'];
         $text_after = $resultDiff['after'];
@@ -139,7 +149,7 @@ class DateTime extends \DateTime
                     $newSelector = ($change ? $this->language->yesterday : "%$pre ".$selector->$type->one);
                 }
                 $result = ($type != 'days' ? $this->language->one_rule.' ' : '').$newSelector;
-            } elseif($number > 0) {
+            } elseif ($number > 0) {
                 $result = "%$pre ".$selector->$type->two;
             }
         } else {
