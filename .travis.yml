@@ -3,8 +3,7 @@ language: php
 env:
   - TESTER_PHP_BIN="php-cgi"
   - TESTER_PHP_BIN="hhvm"
-  global:
-      - RUN_PHPCS="no"
+  - RUN_PHPCS="no"
 
 matrix:
   include:
@@ -54,7 +53,7 @@ before_script:
   - if [ $TRAVIS_PHP_VERSION == "5.3.3" ]; then composer --global config disable-tls true; composer --global config secure-http false; fi
   - travis_retry composer update --no-interaction --prefer-dist $dependencies
   - travis_retry composer create-project nette/code-checker code-checker ~2.5 --no-interaction
-  - if [ $RUN_PHPCS == "yes"]; then ./vendor/bin/phpcs --report=full --extensions=php --standard=PSR1,PSR2 ./src; fi
+  - if [[ $RUN_PHPCS == "yes"]; then ./vendor/bin/phpcs --report=full --extensions=php --standard=PSR1,PSR2 ./src; fi
 
 sudo: false
 
