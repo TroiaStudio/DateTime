@@ -42,9 +42,9 @@ matrix:
       env: TESTER_PHP_BIN="php-cgi"
 
 
-script:
-  - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/
-  - ./vendor/bin/phpcs --report=full --extensions=php ./src
+#script:
+#  - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/
+#  - ./vendor/bin/phpcs --report=full --extensions=php ./src
 #  - ./vendor/bin/tester -p $TESTER_PHP_BIN -c ./tests/GalekTests/Socials/php.ini -s ./tests/
 
 after_failure:
@@ -57,7 +57,9 @@ before_script:
   - travis_retry composer create-project nette/code-checker code-checker ~2.5 --no-interaction
 
 script:
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs --report=full --extensions=php --standard=PSR1,PSR2 src/; fi
+  - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/
+  - ./vendor/bin/phpcs --report=full --extensions=php ./src
+  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs --report=full --extensions=php --standard=PSR1,PSR2 src/; vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/; fi
 
 sudo: false
 
