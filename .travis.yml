@@ -3,7 +3,7 @@ language: php
 env:
   - TESTER_PHP_BIN="php-cgi"
   - TESTER_PHP_BIN="hhvm"
-  - RUN_PHPCS="no"
+  - RUN_PHPCS="yes"
 
 matrix:
   include:
