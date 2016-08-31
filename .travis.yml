@@ -58,8 +58,7 @@ before_script:
 
 script:
   - ./vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/
-  - ./vendor/bin/phpcs --report=full --extensions=php ./src
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs --report=full --extensions=php --standard=PSR1,PSR2 src/; vendor/bin/tester -p $TESTER_PHP_BIN -s ./tests/; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs --report=full --extensions=php --standard=PSR1,PSR2 src/; fi
 
 sudo: false
 
